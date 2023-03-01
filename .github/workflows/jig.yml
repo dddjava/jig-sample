@@ -3,7 +3,7 @@ on:
     branches:
       - main
 jobs:
-  sample-gradle:
+  build-and-deploy-github-pages:
     runs-on: ubuntu-latest
     env:
       GRADLE_OPTS: '-Dorg.gradle.daemon=false'
@@ -20,49 +20,39 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-      - name: Run Build
+      - name: Cache Maven
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml', '**/.mvn/wrapper/maven-wrapper.properties') }}
+
+      - name: sample-gradleのビルド
         run: |
           cd sample-gradle
           ./gradlew jig
+
+      - name: sample-mavenのビルド
+        run: |
+          cd sample-maven
+          ./mvnw package
+
+      - name: sample-mavenmultiのビルド
+        run: |
+          cd sample-maven-multi
+          ./mvnw package
+
       - name: Prepare GitHub Pages
         run: |
           mkdir _site/
           mv sample-gradle/build/jig _site/sample-gradle
+          mv sample-maven/target/jig _site/sample-maven
+          mv sample-maven-multi/target/jig _site/sample-maven-multi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v1.0.7
-  sample-maven:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: 17
-      - name: Cache Maven
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('sample-maven/pom.xml', 'sample-maven/.mvn/wrapper/maven-wrapper.properties') }}
-      - name: Run Build
-        run: |
-          cd sample-maven
-          ./mvnw package
-  sample-maven-multi:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: 17
-      - name: Cache Maven
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('sample-maven-multi/pom.xml', 'sample-maven-multi/.mvn/wrapper/maven-wrapper.properties') }}
-      - name: Run Build
-        run: |
-          cd sample-maven-multi
-          ./mvnw package
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
