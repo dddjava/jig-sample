@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'org.dddjava.jig-gradle-plugin' version '2023.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+[compileJava, processResources]*.shouldRunAfter(clean)
+jigReports.dependsOn(clean, classes)
+
+jig {
+    modelPattern = '.*'
+}
