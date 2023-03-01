@@ -24,6 +24,12 @@ jobs:
         run: |
           cd sample-gradle
           ./gradlew jig
+      - name: Prepare GitHub Pages
+        run: |
+          mkdir _site/
+          mv sample-gradle/build/jig _site/sample-gradle
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1.0.7
   sample-maven:
     runs-on: ubuntu-latest
     steps:
