@@ -4,6 +4,20 @@ Mavenマルチプロジェクトサンプル
 Mavenのマルチプロジェクト構成のサンプルです。
 ルートプロジェクトに `jig-maven-plugin` を導入しています。
 
-各モジュールは
+マルチプロジェクト内の単一プロジェクトに導入したい場合は
 
-出力
+## 実行方法
+
+```
+./mvnw pakcage
+```
+
+[index.html](./target/jig/index.html) を開いてください。
+
+### `jig:jig` で実行したい場合
+この構成で `./mvnw jig:jig` を実行すると、各モジュールに `jig-maven-plugin` が導入されていないためエラーになります。
+`jig:jig` を実行したい場合は `-N` を指定してください。
+
+```
+./mvnw -N jig:jig
+```

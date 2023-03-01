@@ -1,7 +1,10 @@
-package jig.sample.sample_maven_multi.alfa;
+package jig.sample.sample_maven_multi.bravo;
+
+import jig.sample.sample_maven_multi.alfa.Alfa;
 
 /**
- * アルファ
+ * ブラボ
  */
-public class Alfa {
+public class Bravo {
+    Alfa alfa;
 }

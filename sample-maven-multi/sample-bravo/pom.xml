@@ -8,9 +8,17 @@
         <groupId>org.dddjava.jig</groupId>
         <artifactId>sample-parent</artifactId>
         <version>1.0</version>
-        <relativePath />
+        <relativePath>../sample-parent</relativePath>
     </parent>
 
     <artifactId>sample-bravo</artifactId>
     <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.dddjava.jig</groupId>
+            <artifactId>sample-alfa</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
