@@ -51,7 +51,6 @@ jobs:
 
       - name: Prepare GitHub Pages
         run: |
-          mkdir _site/
           mv sample-gradle/build/jig _site/sample-gradle
           mv sample-maven/target/jig _site/sample-maven
           mv sample-maven-multi/target/jig _site/sample-maven-multi
