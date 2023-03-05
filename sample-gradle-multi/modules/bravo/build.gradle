@@ -1,0 +1,7 @@
+plugins {
+    id 'jig.java-conventions'
+}
+
+dependencies {
+    implementation(project(":modules:alfa"))
+}

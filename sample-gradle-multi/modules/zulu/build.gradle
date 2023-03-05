@@ -1,0 +1,19 @@
+plugins {
+    id 'jig.java-conventions'
+    id 'org.springframework.boot' version '3.0.3'
+    id 'org.dddjava.jig-gradle-plugin' version '2023.2.1'
+}
+
+dependencies {
+    implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+    implementation(project(":modules:alfa"))
+    implementation(project(":modules:bravo"))
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:'
+}
+
+jig {
+    modelPattern = "jig\\.sample\\.sample_gradle_multi\\.(alfa|bravo)\\..+"
+}
+[compileJava, processResources]*.shouldRunAfter(clean)
+jigReports.dependsOn(clean, classes)
