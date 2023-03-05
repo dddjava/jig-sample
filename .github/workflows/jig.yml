@@ -69,7 +69,7 @@ jobs:
       - name: Prepare GitHub Pages
         run: |
           mv sample-gradle/build/jig _site/sample-gradle
-          mv sample-gradle/modules/zulu/build/jig _site/sample-gradle-multi
+          mv sample-gradle-multi/modules/zulu/build/jig _site/sample-gradle-multi
           mv sample-maven/target/jig _site/sample-maven
           mv sample-maven-multi/target/jig _site/sample-maven-multi
 
