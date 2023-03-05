@@ -7,7 +7,7 @@ GradleやMavenの基本的な構成でのJIGの設定を示します。
 
 ## 説明
 - [sample-gradle](./sample-gradle) GradleのシンプルなプロジェクトでJIGドキュメントが出力できる
-- TBD Gradleのマルチプロジェクトですべてを包含したJIGドキュメントが出力できる
+- [sample-gradle-multi](./sample-gradle-multi) Gradleのマルチプロジェクトですべてを包含したJIGドキュメントが出力できる
 - [sample-maven](./sample-maven) MavenのシンプルなプロジェクトでJIGドキュメントが出力できる
 - [sample-maven-multi](./sample-maven-multi) Mavenのマルチプロジェクトですべてを包含したJIGドキュメントが出力できる
 - [.github/workflows/jig.yml](.github/workflows/jig.yml#L47) GitHub ActionsでJIGドキュメントが出力できる
