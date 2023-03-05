@@ -1,6 +1,6 @@
 JIGサンプル
 ============================================================
-![badge](https://github.com/dddjava/jig-sample/actions/workflows/jig.yml/badge.svg)
+[![badge](https://github.com/dddjava/jig-sample/actions/workflows/jig.yml/badge.svg)](https://github.com/dddjava/jig-sample/actions/workflows/jig.yml)
 
 [JIG](https://github.com/dddjava/jig) のサンプルです。
 GradleやMavenの基本的な構成でのJIGの設定を示します。
