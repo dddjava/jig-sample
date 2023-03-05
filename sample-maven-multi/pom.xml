@@ -8,7 +8,6 @@
     <artifactId>sample-maven-multi</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <name>Multi Chapter Simple Parent Project</name>
 
     <modules>
         <module>sample-parent</module>
