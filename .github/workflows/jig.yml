@@ -44,7 +44,7 @@ jobs:
           cd sample-maven
           ./mvnw package
 
-      - name: sample-mavenmultiのビルド
+      - name: sample-maven-multiのビルド
         run: |
           cd sample-maven-multi
           ./mvnw package
