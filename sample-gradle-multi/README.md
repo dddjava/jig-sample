@@ -12,5 +12,6 @@ Gradleプラグインでは、適用したプロジェクト（今回は `zulu` 
 ./gradlew jig
 ```
 
-[index.html](./modules/zulu/build/jig/index.html) を開いてください。
+実行できたら　`./modules/zulu/build/jig/index.html` を開いてください。
 
+オンラインサンプルは https://dddjava.github.io/jig-sample/sample-gradle-multi/ です。
