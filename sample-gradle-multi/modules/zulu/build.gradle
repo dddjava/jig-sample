@@ -1,7 +1,7 @@
 plugins {
     id 'jig.java-conventions'
     id 'org.springframework.boot' version '3.0.3'
-    id 'org.dddjava.jig-gradle-plugin' version '2023.2.1'
+    id 'org.dddjava.jig-gradle-plugin' version '2025.1.4'
 }
 
 dependencies {
