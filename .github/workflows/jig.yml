@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: 17
+          java-version: 25
 
       # GradleやMavenのキャッシュです。 actions/gradle-build-action などを使用する場合は自分でやらなくていいです。
       - name: Cache Gradle
