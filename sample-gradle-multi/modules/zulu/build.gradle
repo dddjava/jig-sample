@@ -1,7 +1,7 @@
 plugins {
     id 'jig.java-conventions'
     id 'org.springframework.boot' version '3.0.3'
-    id 'org.dddjava.jig-gradle-plugin' version '2025.1.4'
+    id 'org.dddjava.jig-gradle-plugin' version '2026.2.1'
 }
 
 dependencies {
@@ -15,5 +15,6 @@ dependencies {
 jig {
     modelPattern = "jig\\.sample\\.sample_gradle_multi\\.(alfa|bravo)\\..+"
 }
-[compileJava, processResources]*.shouldRunAfter(clean)
-jigReports.dependsOn(clean, classes)
+tasks.named('compileJava') { shouldRunAfter(clean) }
+tasks.named('processResources') { shouldRunAfter(clean) }
+tasks.named('jigReports') { dependsOn(clean, classes) }
