@@ -18,9 +18,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.irof</groupId>
+                <groupId>org.dddjava.jig</groupId>
                 <artifactId>jig-maven-plugin</artifactId>
-                <version>2025.1.4</version>
+                <version>2026.3.3</version>
                 <configuration>
                     <domainPattern>.*</domainPattern>
                 </configuration>
