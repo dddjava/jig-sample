@@ -21,7 +21,7 @@ jobs:
       # 画像出力のためにGraphvizを入れます。
       # 自分で apt install してもいいです。DOT（テキスト）でいい場合は不要です。
       - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
+        uses: ts-graphviz/setup-graphviz@v2
 
       # 何をするにしてもJDKが必要
       - name: Setup JDK
