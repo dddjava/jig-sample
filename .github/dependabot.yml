@@ -12,3 +12,7 @@ updates:
       - "/sample-gradle-multi"
     schedule:
       interval: "weekly"
+  - package-echosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
