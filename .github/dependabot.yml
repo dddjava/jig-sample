@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directories:
+      - "/sample-maven"
+      - "/sample-maven-multi"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gradle"
+    directories:
+      - "/sample-gradle"
+      - "/sample-gradle-multi"
+    schedule:
+      interval: "weekly"
